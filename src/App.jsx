@@ -82,7 +82,11 @@ function App() {
         {images.length > 0 && <ImageGallery images={images} onOpen={onOpen}/>}
         {images.length > 0 && page && !loading && <LoadMoreBtn onLoadMore={onLoadMore} />}
       </div>
-      {selectedImage && <ImageModal onClose={onClose} image={selectedImage} />}
+      <ImageModal
+        isOpen={!!selectedImage}
+        image={selectedImage}
+        onClose={onClose}
+      />
     </>
   )
 }
